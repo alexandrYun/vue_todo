@@ -51,11 +51,13 @@ export default {
       const newTodo = {
         title: this.todo_title,
         priority: this.priority,
-        date: this.date
+        date: this.date,
+        id: Date.now()
       }
       this.$emit('create-card', newTodo)
+      this.todo_title = ''
     }
-  }
+  },
 }
 </script>
 

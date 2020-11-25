@@ -5,6 +5,7 @@
                 v-for="(cardItem, i) of todo" v-bind:key="i"
                 v-bind:card="cardItem"
                 v-bind:id="i"
+                @delete-todo="deleteTodo"
             />
         </ul>
     </div>    
@@ -16,6 +17,11 @@ export default {
     props: ['todo'],
     components: {
         TodoCard
+    },
+    methods: {
+        deleteTodo(id) {
+            this.$emit('delete-todo', id)
+        }
     }
 }
 </script>

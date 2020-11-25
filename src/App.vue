@@ -3,7 +3,9 @@
     <Header />
     <div class="wrapper">
     <AddTodo @create-card="createCard"/>
-    <TodoList v-bind:todo="todocard"/>
+    <TodoList v-bind:todo="todocard"
+    @delete-todo="deleteTodo"
+    />
     </div>
   </v-app>
 </template>
@@ -15,7 +17,9 @@ import TodoList from '@/components/TodoList'
 
 export default {
   name: 'App',
-
+  data: () => ({
+    todocard: []
+  }),
   components: {
     Header,
     AddTodo,
@@ -25,11 +29,11 @@ export default {
     createCard(todo) {
       this.todocard.push(todo);
       console.log(this.todocard)
+    },
+    deleteTodo(id) {
+      this.todocard = this.todocard.filter(todo => todo.id !== id)
     }
-  },
-  data: () => ({
-    todocard: []
-  }),
+  }
 };
 </script>
 
