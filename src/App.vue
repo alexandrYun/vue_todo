@@ -1,44 +1,45 @@
 <template>
   <v-app>
     <Header />
-    <div class="wrapper">
+    <router-view />
+    <!-- <div class="wrapper">
     <AddTodo @create-card="createCard"/>
     <TodoList v-bind:todo="todocard"
     @delete-todo="deleteTodo"
     />
-    </div>
+    </div> -->
   </v-app>
 </template>
 
 <script>
 import Header from '@/components/Header'
-import AddTodo from '@/components/AddTodo'
-import TodoList from '@/components/TodoList'
+// import AddTodo from '@/components/AddTodo'
+// import TodoList from '@/components/TodoList'
 
 export default {
   name: 'App',
-  data: () => ({
-    todocard: []
-  }),
+  // data: () => ({
+  //   todocard: []
+  // }),
   components: {
     Header,
-    AddTodo,
-    TodoList
+    // AddTodo,
+    // TodoList
   },
-  methods: {
-    createCard(todo) {
-      this.todocard.push(todo);
-      console.log(this.todocard)
-    },
-    deleteTodo(id) {
-      this.todocard = this.todocard.filter(todo => todo.id !== id)
-    }
-  }
+  // methods: {
+  //   createCard(todo) {
+  //     this.todocard.push(todo);
+  //     console.log(this.todocard)
+  //   },
+  //   deleteTodo(id) {
+  //     this.todocard = this.todocard.filter(todo => todo.id !== id)
+  //   }
+  // }
 };
 </script>
 
 <style>
-  .wrapper {
+  /* .wrapper {
     display: flex;
-  }
+  } */
 </style>

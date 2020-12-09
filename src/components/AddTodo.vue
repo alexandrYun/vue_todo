@@ -23,15 +23,11 @@
         class="todo__deadline"
       ></v-date-picker>
     <v-btn
-      class="mx-2"
-      fab
       dark
-      color="indigo"
+      color="blue"
       @click="addTodo"
     >
-      <v-icon dark>
-        mdi-plus
-      </v-icon>
+      Создать
     </v-btn>
   </div>
 </template>
